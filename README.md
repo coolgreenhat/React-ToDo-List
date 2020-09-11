@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is React ?
+React is a *JavaScript library* created by Facebook and is used for building user interfaces (UIs) and front-end applications.
 
-## Available Scripts
+React is often called framework because of its behavior and capabilities. It's basically V in MVC.
 
-In the project directory, you can run:
+## Why Use React ?
+* Makes front-end JavaScript much easier 
+* Uses self contained, independent components with their own state
+* Much more interactive UIs
+* Virtual DOM
+* JSX - Easily incorporate JS in markup
+* Easy to work with teams
 
-### `yarn start`
+## What Should You Know Before Learning React ?
+* JavaScript Fundamentals (Objects, Arrays, Conditionals, etc)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**It may help to learn these first :**
+* Classes
+* Destructuring
+* High Order Array Methods - forEach, map, filter
+* Arrow Functions
+* Fetch API & Promises 
+  
+## React State 
+* Components can have state which is an object that determines how that components renders and behaves
+* We can also have "application level" state by using a state manager like *Redux* or *React Context API*.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+for e.g.
+```javascript
+state = { 
+  title: 'xxx',
+  body: 'xxx'
+  isFeatured: true
+}
+```
 
-### `yarn test`
+## Create React App
+* CLI Tool for creating React Applications.
+* Uses *Webpack* but needs no configuration from you.
+* Comes bundled with a dev server with hot reload.
+* "*npm run build*" will compile all your code to something that the browser can read.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Anatomy of a Component
+**Class based component**
+```javascript
+Class Post extends React.Component {
+  state = {
+    title: 'Post One',
+    body: 'This is my post'
+  }
 
-### `yarn build`
+  render() {
+    return (
+      <div>
+        <h3>{ this.state.title }</h3>
+        <p>{this.state.body }</p>
+      </div>
+    )
+  }
+}
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### index.html
+React is a single page application(SPA) framework i.e. everything runs through one physical single page i.e index.html. Everything outputs in a following single div.
+```javascript
+  <div id="root"></div>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* render() is a lifecycle method required to render a component in browser
